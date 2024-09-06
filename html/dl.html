@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dl 용어 정의 목록</title>
+</head>
+<body>
+  <p>
+    용어정의,저자 등 dl<br>
+    dl의 자식은 dt, dd 가 올 수 있음
+  </p>
+  <!-- dl>dt+dd -->
+   <dl>
+    <dt>1</dt>
+    <dd>1-1</dd>
+    <dd>1-2</dd>
+   </dl>
+   <dl>
+    <dt>작곡가</dt>
+    <dd>홍길동</dd>
+    <dd>심청이</dd>
+    <dd>김놀부</dd>
+   </dl>
+
+   <!-- 
+    emmet 기호
+    > 부모>자식
+    + 형제 / 형+동생
+    * 반복
+
+    dl 은 여러개의 dt 를 자식으로 가질 수 있다
+    dt는 dd를 여러개의 동생으로 가질 수 있다
+   -->
+   
+   <hr>
+   <!-- dl>dt*2+dd*2 -->
+    <p>dl>dt*2+dd*2 잘못된 식</p>
+   <dl>
+    <dt>1</dt>
+    <dt>2</dt>
+    <dd>3</dd>
+    <dd>4</dd>
+   </dl>
+
+   <!-- dl>dt*2>dd*2 -->
+    <p>dl>dt*2>dd*2 잘못된 식</p>
+    <dl>
+      <dt>
+        <dd>1</dd>
+        <dd>2</dd>
+      </dt>
+      <dt>
+        <dd>3</dd>
+        <dd>4</dd>
+      </dt>
+    </dl>
+
+    <!-- dl>dt+dd*2 -->
+    <p>dl>dt+dd*2</p>
+    <dl>
+      <dt>1</dt>
+      <dd>1-2</dd>
+      <dd>1-3</dd>
+    </dl>
+
+    <!-- dl>(dt+dd*2)*2 -->
+     <p>dl>(dt+dd*2)*2</p>
+    <dl>
+      <dt>1</dt>
+      <dd>1-2</dd>
+      <dd>1-3</dd>
+      <dt>2</dt>
+      <dd>2-1</dd>
+      <dd>2-2</dd>
+    </dl>
+</body>
+</html>
