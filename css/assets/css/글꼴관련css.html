@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글꼴관련css.html</title>
+  <style>
+    span.title{
+      font-weight: 600;
+    }
+    section{
+      background-color: #ccc;
+      color: #00f;
+      /* 
+      font-size: 100%; 
+      font-size: 14px; (10.5pt)
+      font-size: 0.0875%;
+      font-size: 0.875em; (16px -> 1em 계산하는 방법)
+
+      font-size 기본
+      16px 14px 1em 100%
+      */
+      font-size: 1em;
+      line-height: 100%;
+    }
+    span{
+      color: #f00;
+    }
+    .title{
+      font-weight: 800;
+    }
+    .section2 span{
+      color: #0f0;
+    }
+    body{
+      color: #f0f;
+    }
+  </style>
+</head>
+<body>
+  <!-- section.section$*3>p>lorem -->
+  <section class="section1">
+    <p>Lorem <span class="title">ipsum</span> dolor sit, amet consectetur adipisicing elit. Id sint provident saepe perspiciatis autem, distinctio nisi earum numquam facilis quia ullam repellat magnam. Itaque modi voluptas veniam. Sapiente, porro modi!</p>
+  </section>
+  <section class="section2">
+    <p>Animi <span>sequi</span> fugit itaque aperiam cum ipsam quisquam. Saepe cumque in architecto recusandae accusamus! Ipsum sint nisi, modi, excepturi cupiditate blanditiis impedit ex iure ab consectetur id cum, nulla officia.</p>
+  </section>
+  <section class="section3">
+    <p>Non <span>earum</span> sunt illo? Odio, sint laborum! Delectus optio commodi quam, in suscipit aspernatur cumque asperiores ex architecto cum laboriosam voluptates voluptate nulla minus harum reprehenderit quidem, beatae, rem eum.</p>
+  </section>
+
+  <!-- p>a>{글꼴을 상속받지않는 a태그} -->
+  <!-- a태그의 글자색(color)을 지정하려면 조상아닌 a태그 본인에게 color지정 -->
+  <p><a href="">글꼴을 상속받지않는 a태그</a></p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi nostrum recusandae numquam totam voluptatum odit, rerum quas nam libero similique ipsam corporis minima nemo deleniti atque quis dolorum ipsa vel.</p>
+</body>
+</html>
