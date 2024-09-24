@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-position</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      background-color: #f66;
+      margin-bottom: 30px; /* 바깥아래여백 */
+      padding: 50px; /* 안쪽여백 */
+      border: 10px dashed #63f;
+      box-sizing: border-box; /* 박스모델계산법을 border+padding+contents 영역으로 변경 */
+      min-height: 500px;
+      background-image: url(../images/sun.png);
+      background-repeat: no-repeat;
+    }
+    .box1{background-position: left top;}
+    /* .box2{background-position: right top;} */
+    .box2{background-position: 100% 0%;}
+    .box3{background-position: 50px 100px;}
+    .box4{background-position: center;}
+  </style>
+</head>
+<body>
+  <!-- .box.box$*4>{box$} -->
+  <div class="box box1">box1</div>
+  <div class="box box2">box2</div>
+  <div class="box box3">box3</div>
+  <div class="box box4">box4</div>
+</body>
+</html>
