@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>word-break</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      margin: 20px auto; 
+      width: 400px; 
+      border: 1px solid #000;
+    }
+    .box1{
+      word-break: keep-all;
+      text-align: center;
+    }
+    .box2{
+      word-break: normal;
+      text-align: center;
+    }
+    .box3{
+      word-break: break-all; /* 어절이 유지되지 않고 끊어져서 줄바꿈 됨*/
+      /* 영어도 단어단위 word wrap 이 아니라 문자 단위로 wrap */
+    }
+  </style>
+</head>
+<body>
+  <div class="box box1">간에 창공에 얼마나 같은 황금 뭇 방황하였으며 죽음이 것은 놀이 풀이 우리는 되는 두 얼음과 실로 부패를 낙원을 물방아 찬미를 이상 이것이야말로 인생에 수 이상이 든 찾아 그러므로.</div>
+  <div class="box box2">간에 창공에 얼마나 같은 황금 뭇 방황하였으며 죽음이 것은 놀이 풀이 우리는 되는 두 얼음과 실로 부패를 낙원을 물방아 찬미를 이상 이것이야말로 인생에 수 이상이 든 찾아 그러므로.</div>
+  <div class="box box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis modi nam assumenda nulla neque fuga voluptatem nobis repudiandae veniam ipsam?</div>
+  <div class="box box4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis alias dicta quibusdam velit ex eveniet voluptates nesciunt similique architecto vel./div>
+</body>
+</html>
