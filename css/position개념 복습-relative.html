@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position개념 복습-relative</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    main{
+      width: 300px;
+      height: 400px;
+      background-color: tomato;
+    }
+    div{
+      width: 200px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: yellow;
+      text-align: center;
+      line-height: 100px;
+      box-sizing: border-box;
+    }
+    div:nth-of-type(2){
+      position: relative;
+      top: 28px;
+      left: 48px;
+      background-color: cyan;
+      opacity: 0.7;
+    }
+    /* 
+    postion:relative;
+    -요소를 원래 위치에서 벗어나게 배치할 수 있게 됨
+    -요소를 원래위치를 기준으로 상대적(relative)으로 배치
+    -요소의 위치 지정은 top bottom left right 속성 이용하여 요소가 원래위치의 상하좌우로 부터 얼마나 떨어지게 할지 지정할 수 있음
+    */
+  </style>
+</head>
+<body>
+  <main>
+    <div>첫번째 요소</div>
+    <div>두번째 요소</div>
+    <div>세번째 요소</div>
+  </main>
+</body>
+</html>
