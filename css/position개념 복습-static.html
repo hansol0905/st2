@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position개념 복습-static</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    main{
+      width: 300px;
+      height: 400px;
+      background-color: tomato;
+    }
+    div{
+      width: 200px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: yellow;
+      text-align: center;
+      line-height: 100px;
+      box-sizing: border-box;
+    }
+    div:nth-of-type(2){
+      position: static;
+      background-color: cyan;
+      opacity: 0.7;
+    }
+    /* 
+    postion:static;
+    position 속성을 별도로 지정해주지 않으면 기본값인 static 적용
+    html문서 상에서 원래 있어야하는 위치에 배치됨
+    */
+  </style>
+</head>
+<body>
+  <main>
+    <div>첫번째 요소</div>
+    <div>두번째 요소</div>
+    <div>세번째 요소</div>
+  </main>
+</body>
+</html>
