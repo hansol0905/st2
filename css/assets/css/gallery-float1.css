@@ -12,17 +12,35 @@ ul,ol,li{list-style: none;}
   margin: 50px;
 }
 
+/* 
+float 문제 해결을 위해
+.clearfix -> float를 지정한 부모요소에 추가
+*/
+.clearfix{overflow: hidden;}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* 갤러리 레이아웃 float */
 .card__list{}
-.card__list ul.card__warp{}
-.card__list li.card__item{}
+.card__list ul.card__wrap{
+  background-color: #ff6; /*테스트 후 삭제*/
+}
+.card__list li.card__item{
+  float: left;
+  /* width: 25%; */
+  width: calc(25% - (10px + 10px));
+  margin: 10px; /*좌우 바깥여백 10+10*/
+  /* 1col당 너비(25%+20px)*4 = 100%+80px */
+}
 .card__list div.card{}
 
 /* card design */
 .card{
-  width: 300px;
+  width: auto; /*마진 보더 패딩 빼고 나머지값을*/
   border: 1px solid #efefef;
-  margin-bottom: 20px; /*테스트 후 삭제*/
 }
 .card .card__thumbnail{
 /* 
