@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-layout2- flex의 속성들2</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .wrap{
+      width: 85%;
+      margin: 50px auto;
+      background-color: #ccc;
+    }
+    .container{
+      width: 600px;
+      background-color: magenta;
+      gap: 2px;
+    }
+    .item{
+      background-color: dodgerblue;
+      padding: 0.5em;
+    }
+    /* 여기부터 flex 속성 */
+    /* 1. flex container 선언 */
+    .flex-container{
+      display: flex;
+    }
+
+    /* 2. flex item 의 방향 결정
+          flex의 주축과 교차축의 방향 결정
+          flex-direction : row; 주축 수평방향
+          flex-direction : column; 주축 수직방향
+    */
+    .flex-container{
+      flex-direction: row;
+      /* flex-direction: column; */
+    }
+
+    /* 3. flex item 확장수축크기 결정 
+          flex-shrink: 1; 수축여부
+          flex-grow: 0; item확장여부
+          flex-basis: auto; 크기를 지정하는 알고리즘 결정 + width/height 지정
+    */
+    .item{
+      /* 기본값 0 */
+      /* 0 0 auto 이랑 flex: none; 은 동일함 */
+      flex-shrink: 0;
+      flex-grow: 0;
+      flex-basis: auto;
+      
+      /* 주축의 방향에 맞게 width,height 지정 */
+      /* %단위 가변크기로 지정 - 반응형 */
+      /* width: 150px; 600/4 */
+      /* width: calc(아이템크기 - 갭의크기) */
+      /* width: 150px; */
+      width: calc(25% - 2px);
+    }
+    
+    /* 4. 만약에 flex item의 크기 총합이 flex container의 크기보다 클 경우 wrap(줄바꿈을 할지말지) 이 판단함
+          item{flex: none; width: 150px;}
+          flex item 다합치면 150px * 10
+
+          box-sizing: border-box; 전제 하에
+          .item 의 크기가 -> (width + gap) , (height + gap)
+          아이템이 반복돼서 진열되다가 0.00n 크기라도 부족하면 줄바꿈
+    */
+    .flex-container{
+      /* flx-wrap: norwrap; 기본값 */
+      flex-wrap: wrap;
+    }
+    /* 5. flex container를 부모요소 내 정렬 판단 */
+    /* 6. flex item 정렬 판단 */
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex-container">
+      <div class="item item1">item1</div>
+      <div class="item item2">item2</div>
+      <div class="item item3">item3</div>
+      <div class="item item4">item4</div>
+      <div class="item item5">item5</div>
+      <div class="item item6">item6</div>
+      <div class="item item7">item7</div>
+      <div class="item item8">item8</div>
+      <div class="item item9">item9</div>
+      <div class="item item10">item10</div>
+    </div>
+  </div>
+</body>
+</html>
