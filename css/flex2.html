@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex2 - 양끝정렬</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{}
+    .header{
+      padding: 1rem 0; background-color: #ccc;
+    }
+    .header .logo{
+      width: 100px;
+      height: 100px;
+      background-color: #ff6;
+    }
+    .header .toparea-stat{
+      padding: 0.5rem 0;
+      width: 150px;
+      background-color: #6ff;
+      margin-left: auto;
+      /* margin:auto; 는 container의 여유 공간을 알아서 계산하여 사용해줌 */
+    }
+    /* flex 관련선언 */
+    .flex-container{
+      display: flex; /*1*/
+      flex-direction: row; /*2 기본값이라 생략 가능*/
+      flex-wrap: nowrap; /*4 기본값이라 생략 가능*/
+      /* justify-content: space-between; /*6-1*/
+      /*flex-start 6-1 원래초기값이라 생략가능
+      .toparea-stat 를 container 오른쪽에 보내기위해 margin 을 이용 */
+      justify-content: flex-start; 
+      align-items: center; /*6-2*/
+    }
+    /* 크기선언 */
+    .item{
+      flex-grow: 0; /*3 기본값이라 생략 가능*/
+      flex-shrink: 0; /*3 기본값이라 생략 가능=줄어들어도 상관없음*/
+      flex-basis: auto; /*3 기본값이라 생략 가능*/
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header flex-container">
+      <h1 class="logo item">logo</h1>
+      <div class="toparea-stat item">기능메뉴</div>
+    </header>
+  </div>
+  1. flex container 선언- flex container
+  2. flex item 의 방향 결정- flex container
+  3. flex item 확장수축크기 결정 - flex item 
+      확장flex-grow   수축flex-shrink 크기 = flex-basis: auto;
+  4. 만약에 flex item의 크기 총합이 flex container의 크기보다 클 경우 wrap(줄바꿈을 할지말지) 이 판단함 - flex item
+  5. flex container를 부모요소 내 정렬 판단- flex container
+      일반적인 block레벨 inline레벨 정렬하는것과 같이
+  6. flex item 정렬 판단
+      (정렬은 container > item의 합)
+  6-1 주축의 방향 -container내의 모든 아이템- flex container
+  6-2 교차방향 -container내의 모든 아이템- flex container
+                container 교차축의 크기를 (width/height)
+  6-3 개별아이템 정렬- flex item
+</body>
+</html>
