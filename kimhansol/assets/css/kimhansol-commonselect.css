@@ -1,0 +1,121 @@
+@charset "UTF-8"
+
+/* reset */
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+ul,li{list-style: none;}
+
+section{
+  margin: 50px;
+  display: block;
+}
+
+/* 메인타이틀 */
+.main_title.ez-align-left{
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-end;
+
+  text-align: left;
+  justify-content: flex-start;
+
+  margin-bottom: 30px;
+}
+
+/* 상품명 */
+.main_title_txt01{
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: #111;
+  /* background-color: yellow; */
+}
+
+/* 상품요약설명 */
+.main_title .main_title_txt02{
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #999;
+}
+
+/* 상품목록전체 */
+.xans-product-listmain.ec-base-product{
+}
+ul.prdList.grid4{
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* 상품아이템 */
+.prdList__item{
+  float: left;
+  /* 아이템 종횡비 1:1 */
+  width: calc(25% - (10px + 10px));
+  margin: 10px;
+  /* border: 1px solid #bdbdbd; */
+}
+
+/* 썸네일이미지 */
+.thumbnail{
+  position: relative; /*sale__box기준요소*/
+}
+
+.thumbnail a{
+  display: block;
+}
+
+.thumbnail a img{
+  display: block;
+  width: 100%;
+}
+
+.thumbnail .sale__box{
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  /* width: 50px;
+  height: 50px; */
+  font-weight: 500;
+  /* font-size: 20px; */
+  text-align: center;
+  border-radius: 50%;
+
+  display: flex;
+  /* align-content: center; */
+
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  
+  width:calc(40px + (50 - 40) * ((100vw - 370px) / (1680 - 370)));
+  height: calc(40px + (50 - 40) * ((100vw - 370px) / (1680 - 370)));
+  font-size: calc(12px + (20 - 12) * ((100vw - 370px) / (1680 - 370)));
+}
+
+/* 상품설명 */
+.description{
+  /* padding: 1rem 0; */
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+  /* white-space: normal; */
+  margin-top: 20px;
+}
+.description .name{
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.description .spec{
+  background-color: #fff;
+  font-family: 'Noto+Sans+KR',sans-serif;
+  /* border-top: 1px solid #bdbdbd; */
+
+  margin: 10px 0 0 0;
+}
+
+.description li.xnas-record{
+  margin-bottom: 5px;
+}

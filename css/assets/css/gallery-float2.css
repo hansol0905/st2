@@ -16,8 +16,8 @@ ul,ol,li{list-style: none;}
 float 문제 해결을 위해
 .clearfix -> float를 지정한 부모요소에 추가
 */
-.clearfix{overflow: hidden;}
-.clearfix::after{
+ul.clearfix{overflow: hidden;}
+ul.clearfix::after{
   content: "";
   display: block;
   clear: both;
