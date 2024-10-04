@@ -72,23 +72,44 @@ body, code {
 <div class="likeButton likePrd">
   <button>
     <img src="//img.echosting.cafe24.com/skin/admin_ko_KR/product/ico_likeit_on.png" class="likePrdIcon" product_no="23" category_no="1" icon_status="on" alt="좋아요 등록 후">
-    <strong><span class="likeCount"></span></strong>
+    <strong><span class="likeCount">10</span></strong>
   </button>
 </div>
 */
 /* likeButton 기능 요구 :
    1. 기존의 likeButton에 지정된 이미지 표시x -> .likeButton img{}
-   2. 그 자리에 Like 텍스트 표시
+   2. 그 자리에 Like 텍스트 표시 -> .likeButton::before
    3. like 텍스트 좋아요 누적 수가 표시 -> .likeButton strong{}
 */
+.ec-base-product .prdList .thumbnail .likeButton::before{
+  content: "Like";
+  font-size: 12px;
+  display: block;
+  line-height: 1;
+}
 .ec-base-product .prdList .thumbnail .likeButton{
   border: 1px solid #00f; /*테스트 후 삭제*/
   position: absolute; /*기준요소 설정 필요 : 부모에게 position:relative 주기*/
-  left: 0px; top: 0px; /*위치설정*/
+  left: 4%; top: 4%; /*위치설정*/
+
+  /* like텍스트와 count 숫자가 수평 수직 가운데 정렬 */
+  width: 40px; height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*주축 가운데*/
+  align-items: center;
+  cursor: pointer;
 }
-.ec-base-product .prdList .thumbnail .likeButton button{}
+.ec-base-product .prdList .thumbnail .likeButton button{
+  background-color: transparent; /*button요소 기본색상 제거*/
+  border: none; /*button요소 기본테두리 제거*/
+}
 .ec-base-product .prdList .thumbnail .likeButton img{
   display: none; /*likeButton 기능요구 1번*/
 }
-.ec-base-product .prdList .thumbnail .likeButton strong{}
+.ec-base-product .prdList .thumbnail .likeButton strong{
+  display: block;
+  cursor: pointer;
+  font-weight: normal; /*strong요소 기본 bold 제거*/
+}
 
