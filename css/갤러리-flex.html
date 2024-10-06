@@ -32,31 +32,36 @@
     }
 
     /* flex-layout 변경 */
-    /* float를 위한 설정
+
+    /* float를 위한 설정*/
     .card__list li.card__item {
     float: left;
     width: calc(25% -(10px + 10px));
     margin: 10px;
-    */
+    }
+    .card__list li.card__item{
+    /*float무력화*/
+    float: none; 
 
+    /*container에게 gap:20px 을 주기 위해*/
+    /* 중복될 수 있으니까 아예 없앰 */
+    margin: 0; 
+    
+    flex: auto;
+    /* flex:auto = flex: 1 1 auto 와 동일 */
+
+    /* auto와 차이점 알아두기 */
+    /* flex: none; */
+    }
+    
     /* flex 선언 */
     .card__list .card__wrap{
       display: flex;
       /* flex-direction: row */
-      flex-wrap: wrap; /*줄바꿈*/
+      flex-wrap: wrap;
       gap: 20px;
-      justify-content: space-between; /*균등배포*/
+      justify-content: space-between;
     }
-    .card__list li.card__item{
-      float: none; /*float무력화*/
-      margin: 0; /*container에게 gap:20px 을 주기 위해*/
-
-      /* flex: auto; */
-      /* flex:auto = flex: 1 1 auto 와 동일 */
-      flex: none;
-    }
-
-
 
   </style>
 </head>
@@ -88,6 +93,24 @@
             <div class="card__thumbnail">
               <a href="">
                 <img src="./assets/css/상품이미지.png" alt="" />
+              </a>
+            </div>
+            <div class="card__description">
+              <div class="card__title">제목 title</div>
+              <div class="card__spec">
+                <p class="text-desc">
+                  동해물과 백두산이 마르고 닳도록 Lorem ipsum dolor sit, amet
+                  consectetur adipisicing elit.
+                </p>
+              </div>
+            </div> <!-- //card__description -->
+          </div> <!-- //card -->
+        </li>
+        <li class="card__item">
+          <div class="card">
+            <div class="card__thumbnail">
+              <a href="">
+                <img src="./background/images/bg.jpg" alt="" />
               </a>
             </div>
             <div class="card__description">

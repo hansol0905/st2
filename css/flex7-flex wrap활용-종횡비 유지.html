@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex7 flex-wrap의 활용-종횡비 유지</title>
+  <title>flex7 flex-wrap의 활용-가로세로종횡비 유지</title>
   <style>
     /* reset */
     *{margin: 0; padding: 0; box-sizing: border-box;}
@@ -20,35 +20,47 @@
     .flex-container{
       display: flex;
       flex-direction: row;
-      gap: 20px; /*여백*/
-      flex-wrap: wrap; /*줄바꿈*/
-      justify-content: space-between; /*양끝여백없게*/
-    }
-    .flex-container .item{
-      flex: 1 0 auto;
-      /* width: calc(100% / 3); */
-      width: calc(33.333% - 20px);
-      flex: none;
-      /* flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: auto; */
-    }
-    /* 아이템의 종횡비가 1:1 가 되도록 작성 */
-    .flex-container .item.media-box{
-      width: calc((100% / 4) - 20px);
+
+      /*여백*/
+      gap: 20px; 
+
+      flex-wrap: wrap; 
+      justify-content: space-between; 
     }
 
+    /* 아이템의 종횡비가 1:1 이 되도록 작성 */
+    .flex-container .item.media-box{
+      border: 1px solid blue;
+
+      /* 단 */
+      width: calc((100% / 3) - 20px);
+      width: calc((100% / 2) - 20px);
+      width: calc((100% / 5) - 20px);
+      width: calc((100% / 4) - 20px);
+    }
+    
     .flex-container .item.media-box .media-wrap{
+      /* 높이지정 1:1 = 100% */
       padding-top: 100%;
-      position: relative; /*.media의 기준요소가 되기 위함*/
+      /* ex) 4:3 = 3나누기4 = 0.75 = 75% */
+
+      /*.media의 기준요소가 되기 위함*/
+      position: relative; 
     }
 
     .flex-container .item.media-box .media-wrap .media{
-      position: absolute; /*기준요소 설정 필요*/
+      border: 1px solid red;
+
+      /*기준요소 설정 필요*/
+      position: absolute; 
+    
+      /* 기준요소 width height 따라라 */
       width: 100%;
       height: 100%;
+      /* 위치설정 */
       left: 0;
       top: 0;
+
       padding: 50px;
     }
   </style>
@@ -88,19 +100,21 @@
         </div>
       </div>
     </div>
-    <!-- 1. flex container 선언- flex container <br>
+    <!--  
+    1. flex container 선언- flex container<br>
     2. flex item 의 방향 결정- flex container<br>
     3. flex item 확장수축크기 결정 - flex item <br>
-        확장flex-grow   수축flex-shrink 크기 = flex-basis: auto;<br>
-    4. 만약에 flex item의 크기 총합이 flex container의 크기보다 클 경우 wrap(줄바꿈을 할지말지) 이 판단함 - flex item<br>
+        확장flex-grow   수축flex-shrink   flex-basis<br>
+    4. 만약에 flex item의 크기 총합이 flex container의 크기보다 클 경우 wrap(줄바꿈을 할지말지) 이 판단함 - flex container<br>
     5. flex container를 부모요소 내 정렬 판단- flex container<br>
-        일반적인 block레벨 inline레벨 정렬하는것과 같이<br>
+        (일반적은 block레벨 정렬)<br>
     6. flex item 정렬 판단<br>
-        (정렬은 container > item의 합)<br>
+        (정렬은 container > item합)<br>
     6-1 주축의 방향 -container내의 모든 아이템- flex container<br>
-    6-2 교차방향 -container내의 모든 아이템- flex container<br>
+    6-2 교차축의 방향 -container내의 모든 아이템- flex container<br>
                   container 교차축의 크기를 (width/height)<br>
-    6-3 개별아이템 정렬- flex item<br> -->
+    6-3 개별아이템 정렬- flex item<br>
+    -->
   </div>
   
 </body>
