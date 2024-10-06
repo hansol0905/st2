@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My shop</title>
+    <link rel="stylesheet" href="./css/pages/main.css" />
+    <script
+      src="https://kit.fontawesome.com/ee256bd6ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <nav class="header__nav-box">
+          <ul class="header__list-box">
+            <li class="header__content">BRAND</li>
+            <li class="header__content">EVENT</li>
+            <li class="header__content">LOOKBOOK</li>
+            <li class="header__content">COMPUNITY</li>
+          </ul>
+        </nav>
+        <!-- //nav.header__nav-box -->
+        <h1 class="header__title">MY SHOP</h1>
+        <!-- //h1.header__title -->
+        <ul class="header__menu">
+          <!-- 검색 아이콘 -->
+          <li class="header__content">
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          </li>
+          <!-- 마이페이지 아이콘  -->
+          <li class="header__content header__content--badge-box">
+            <div class="header__user-badge">
+              <span>+2000p</span>
+            </div>
+            <i class="fa-regular fa-user fa-xl"></i>
+          </li>
+          <!-- 장바구니 아이콘 -->
+          <li class="header__content header__content--badge-box">
+            <div class="header__cart-badge"><span>2</span></div>
+            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          </li>
+          <!-- 메뉴 바 아이콘 -->
+          <li class="header__content">
+            <i class="fa-solid fa-bars fa-xl"></i>
+          </li>
+        </ul>
+        <!-- //.ul.header__menu -->
+      </div>
+      <!-- //.header__top -->
+      <div class="header__bottom">
+        <ul class="header__category">
+          <li class="header__content">BEST</li>
+          <li class="header__content">NEW5%</li>
+          <li class="header__content">1+1</li>
+          <li class="header__content">OUTER</li>
+          <li class="header__content">TOP</li>
+          <li class="header__content">SHIRTS</li>
+          <li class="header__content">DRESS</li>
+          <li class="header__content">PANTS</li>
+          <li class="header__content">ACC</li>
+        </ul>
+      </div>
+      <!-- //.heder__bottom -->
+    </header>
+    <main class="main">
+      <!-- 메인슬라이더 -->
+      <section class="main__slider">
+        <h2 class="main_slider-title">MY SHOP</h2>
+        <!-- 아이콘< -->
+        <span class="main__slider-btn">
+          <i class="fa-solid fa-angle-left"></i>
+        </span>
+        <!-- 메인슬라이드 컨테이너  -->
+        <div class="main__slider-container">
+          <span class="main__slider-text">STYLE IN EVERY DAY</span>
+          <div class="main__slider-image-container">
+            <img
+              class="main__slider-image"
+              src="assets/main-slider.jpg"
+              alt="main slider image"
+            />
+          </div>
+          <span class="main__slider-text">FOR SPRING SET-UP</span>
+        </div>
+        <!-- 아이콘> -->
+        <span class="main__slider-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <!-- 바 -->
+        <div class="main__progress-bar">
+          <div
+            class="main__progress-bar-item main__progress-bar-item--visible"
+          ></div>
+          <div
+            class="main__progress-bar-item main__progress-bar-item--invisible"
+          ></div>
+          <div
+            class="main__progress-bar-item main__progress-bar-item--invisible"
+          ></div>
+        </div>
+      </section>
+      <!-- //section.main__slider -->
+      <!-- 소개글  -->
+      <section class="main__introduction">
+        <div class="main__intro-container-img">
+          <img class="main__intro-image" src="./assets/intro1.jpg" alt="" />
+          <div class="main__intro-text-container">
+            <h2 class="main__intro-title">OPEN EVENT</h2>
+            <span class="main__intro-description">오픈이벤트오픈이벤트</span>
+          </div>
+        </div>
+        <div class="main__intro-container">
+          <h2 class="main__intro-title main__intro-title--black">OPEN EVENT</h2>
+          <span class="main__intro-description main__intro-description--black">
+            오픈이벤트오픈이벤트
+          </span>
+        </div>
+        <div class="main__intro-container-img">
+          <img class="main__intro-image" src="./assets/intro2.jpg" alt="" />
+          <div class="main__intro-text-container">
+            <h2 class="main__intro-title">OPEN EVENT</h2>
+            <span class="main__intro-description">오픈이벤트오픈이벤트</span>
+          </div>
+        </div>
+        <div class="main__intro-container-img">
+          <img class="main__intro-image" src="./assets/intro3.jpg" alt="" />
+          <div class="main__intro-text-container">
+            <h2 class="main__intro-title">OPEN EVENT</h2>
+            <span class="main__intro-description">오픈이벤트오픈이벤트</span>
+          </div>
+        </div>
+      </section>
+      <!-- //section.main__introduction -->
+      <!-- 이달의 베스트상품  -->
+      <section class="main__month-best">
+        <h3 class="main__best-title">Best of the month</h3>
+        <span class="main__best-sub-title">이달의 베스트 상품입니다</span>
+        <div class="main__best-sub-container">
+          <!-- 상품1 -->
+          <article class="main__best-article">
+            <!-- 제품썸네일사진 -->
+            <div class="main__article-img-container">
+              <img class="main__article-img" src="assets/intro1.jpg" alt="" />
+            </div>
+            <!-- 제품컬러 -->
+            <div class="main__article-container">
+              <div
+                class="main__article-color-item main__article-color-item--01"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--02"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--03"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--04"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--05"
+              ></div>
+            </div>
+            <!-- 제품명 -->
+            <div class="main__article-container">
+              <h4 class="main__article-product-name">
+                모먼트 베이직 슬림 무지 티셔츠
+              </h4>
+            </div>
+            <!-- 제품요약설명 -->
+            <div class="main__article-container">
+              <span class="main__article-product-description">
+                #편하게 입을 수 있어요 #간편해요 #데일리룩으로 좋아요
+              </span>
+            </div>
+            <!-- 제품가격정보 -->
+            <div class="main__article-container">
+              <span class="main__article-total-price">15,000원</span>
+              <small class="main__article-previous-price">23,000원</small>
+              <span class="main__article-discount-rate">40%</span>
+            </div>
+          </article>
+          <!-- 상품2 -->
+          <article class="main__best-article">
+            <!-- 제품썸네일사진 -->
+            <div class="main__article-img-container">
+              <img class="main__article-img" src="assets/intro1.jpg" alt="" />
+            </div>
+            <!-- 제품컬러 -->
+            <div class="main__article-container">
+              <div
+                class="main__article-color-item main__article-color-item--01"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--02"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--03"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--04"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--05"
+              ></div>
+            </div>
+            <!-- 제품명 -->
+            <div class="main__article-container">
+              <h4 class="main__article-product-name">
+                모먼트 베이직 슬림 무지 티셔츠
+              </h4>
+            </div>
+            <!-- 제품요약설명 -->
+            <div class="main__article-container">
+              <span class="main__article-product-description">
+                #편하게 입을 수 있어요 #간편해요 #데일리룩으로 좋아요
+              </span>
+            </div>
+            <!-- 제품가격정보 -->
+            <div class="main__article-container">
+              <span class="main__article-total-price">15,000원</span>
+              <small class="main__article-previous-price">23,000원</small>
+              <span class="main__article-discount-rate">40%</span>
+            </div>
+          </article>
+          <!-- 상품3 -->
+          <article class="main__best-article">
+            <!-- 제품썸네일사진 -->
+            <div class="main__article-img-container">
+              <img class="main__article-img" src="assets/intro1.jpg" alt="" />
+            </div>
+            <!-- 제품컬러 -->
+            <div class="main__article-container">
+              <div
+                class="main__article-color-item main__article-color-item--01"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--02"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--03"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--04"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--05"
+              ></div>
+            </div>
+            <!-- 제품명 -->
+            <div class="main__article-container">
+              <h4 class="main__article-product-name">
+                모먼트 베이직 슬림 무지 티셔츠
+              </h4>
+            </div>
+            <!-- 제품요약설명 -->
+            <div class="main__article-container">
+              <span class="main__article-product-description">
+                #편하게 입을 수 있어요 #간편해요 #데일리룩으로 좋아요
+              </span>
+            </div>
+            <!-- 제품가격정보 -->
+            <div class="main__article-container">
+              <span class="main__article-total-price">15,000원</span>
+              <small class="main__article-previous-price">23,000원</small>
+              <span class="main__article-discount-rate">40%</span>
+            </div>
+          </article>
+          <!-- 상품4 -->
+          <article class="main__best-article">
+            <!-- 제품썸네일사진 -->
+            <div class="main__article-img-container">
+              <img class="main__article-img" src="assets/intro1.jpg" alt="" />
+            </div>
+            <!-- 제품컬러 -->
+            <div class="main__article-container">
+              <div
+                class="main__article-color-item main__article-color-item--01"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--02"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--03"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--04"
+              ></div>
+              <div
+                class="main__article-color-item main__article-color-item--05"
+              ></div>
+            </div>
+            <!-- 제품명 -->
+            <div class="main__article-container">
+              <h4 class="main__article-product-name">
+                모먼트 베이직 슬림 무지 티셔츠
+              </h4>
+            </div>
+            <!-- 제품요약설명 -->
+            <div class="main__article-container">
+              <span class="main__article-product-description">
+                #편하게 입을 수 있어요 #간편해요 #데일리룩으로 좋아요
+              </span>
+            </div>
+            <!-- 제품가격정보 -->
+            <div class="main__article-container">
+              <span class="main__article-total-price">15,000원</span>
+              <small class="main__article-previous-price">23,000원</small>
+              <span class="main__article-discount-rate">40%</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

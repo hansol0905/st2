@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import "reset.css";
+@import "common.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 테스트용 */
+body>div{margin: 50px;}
+
+/* product-listmain */
+.ec-base-product{} 
+.ec-base-product .prdList{
+  /* li를 display:inline-block; 할 때 생기는 여백 없애기 */
+  font-size: 0;
+  line-height: 0;
+} 
+.ec-base-product .prdList li{
+  border: 1px solid #000;
+  display: inline-block;
+  
+  font-size: 13px;
+  line-height: 1;
+} 
+/* 몇단으로 할지는 클래스 별도지정 */
+.ec-base-product .prdList.grid2 li{width:50%;} 
+.ec-base-product .prdList.grid3 li{width:33.33%;} 
+.ec-base-product .prdList.grid4 li{width:20%;} 
+.ec-base-product .prdList.grid5 li{width:25%;} 
+
+/* margin용 */
+.ec-base-product .prdList .prdList__item{
+  margin: 0 10px;
+} 
+
+.ec-base-product .prdList .thumbnail{
+  border: 1px solid red;
+  position: relative;
+} 
+.ec-base-product .prdList .thumbnail>a{} 
+.ec-base-product .prdList .thumbnail>a>img{
+  /* border: 1px solid blue; */
+  /* max-width: 100%; */
+  width: 100%;
+} 
+
+/* ---------------------------------------- */
+/* 
+.likeButton 기능요구
+1) 기존의 likeButton에 지정된 이미지 표시x
+2) 그 자리에 Like 텍스트 표시
+3) like 텍스트 좋아요 누적 수 표시 -> .likeButton strong{}
+*/
+.ec-base-product .prdList .thumbnail .likeButton::before{
+  /*2*/
+  content: "Like";
+  font-size: 12px;
+  display: block;
+  line-height: 1;
+}
+.ec-base-product .prdList .thumbnail .likeButton{
+  /* border: 1px solid blue; */
+  position: absolute;
+  left: 5%;
+  top: 5%;
+
+  width: 40px;
+  height: 40px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  cursor: pointer;
+} 
+.ec-base-product .prdList .thumbnail .likeButton button{
+  background-color: transparent;
+  border: none;
+} 
+.ec-base-product .prdList .thumbnail .likeButton img{
+  display: none; /*1*/
+} 
+.ec-base-product .prdList .thumbnail .likeButton strong{
+  /*3*/
+  display: block;
+
+  cursor: pointer;
+  font-weight: normal;
+} 
+
+/* ---------------------------------------- */
+.ec-base-product .prdList .thumbnail .icon__box{
+  position: absolute;
+  border: 1px solid green;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.ec-base-product .prdList .thumbnail .icon__box >span{
+  position: relative;
+  border: 1px solid #999;
+  font-weight: 500px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 0 4px;
+  display: block;
+
+  
+}
+.ec-base-product .prdList .thumbnail .icon__box >span.wish{}
+.ec-base-product .prdList .thumbnail .icon__box >span.cart{}
+.ec-base-product .prdList .thumbnail .icon__box >span.option{}
+.ec-base-product .prdList .thumbnail .icon__box >span.option>a{}
+.ec-base-product .prdList .thumbnail .icon__box >span img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+}
+.ec-base-product .prdList .thumbnail .icon__box >span.wish img{}
+.ec-base-product .prdList .thumbnail .icon__box >span.cart img{}
+.ec-base-product .prdList .thumbnail .icon__box >span.option img{}
+

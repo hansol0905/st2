@@ -1,0 +1,8 @@
+@import "reset.css";
+@import "compornents/header.css";
+@import "slider.css";
+@import "intro.css";
+
+body{
+  font-family: "Nanum Myeongjo", serif;
+}
