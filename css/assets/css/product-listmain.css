@@ -31,7 +31,7 @@ body, code {
   font-size: 0;
   line-height: 0;
 }
-.ec-base-product .prdList li{
+.ec-base-product .prdList >li{
   border: 1px solid #000; /*테스트용 보더*/
   display: inline-block; /*li옆 다른 li 오게하기위해서*/
   
@@ -64,8 +64,13 @@ body, code {
   의 기준요소가 되기 위해서 */
   position: relative; 
 }
-.ec-base-product .prdList .thumbnail>a{}
+.ec-base-product .prdList .thumbnail>a{
+  /* 썸네일 밑 여백 제거 */
+  display: block;
+  
+}
 .ec-base-product .prdList .thumbnail>a>img{
+  display: block; /* 썸네일 밑 여백 제거 */
   /* 1. 원래 이미지보다 커지지않으면서 부모의 너비를 따라라 */
   max-width: 100%;
   /* 2. 무조건 부모의 너비를 따라라 */
@@ -142,6 +147,11 @@ body, code {
   flex-direction: row; /*생략가능*/
   justify-content: center;
   width: 100%; /*부모요소의 100%*/
+
+  opacity: 0;
+}
+.ec-base-product .prdList .prdList__item:hover .icon__box{
+  opacity: 1;
 }
 .ec-base-product .prdList .icon__box >span{
   display: block;
@@ -153,7 +163,21 @@ body, code {
   margin: 0 4px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+  
+  cursor: pointer;
+  min-width: 74px;
+  text-align: center;
+  box-sizing: border-box;
+}
 
+/* 기능요구
+mouseout(mouseleave) : 회색배경 검정글자
+mouseover(monuseenter, hover) : 테두리검정 검정배경 흰색글자
+*/
+.ec-base-product .prdList .icon__box >span:hover{
+  border-color: #000;
+  background-color: #000;
+  color: white;
 }
 .ec-base-product .prdList .icon__box >span.wish{}
 .ec-base-product .prdList .icon__box >span.cart{}
@@ -167,3 +191,69 @@ body, code {
 .ec-base-product .prdList .icon__box >span.wish img{}
 .ec-base-product .prdList .icon__box >span.cart img{}
 .ec-base-product .prdList .icon__box >span.option img{}
+
+/* 할인율 .sale_box*/
+.ec-base-product .prdList .sale_box{
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  border: 1px solid #000;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/*html구조
+<div class="description">
+    <div class="name">
+      <a href="">
+        <span class="title">상품명</span>
+        <span style="font-size: 18px; color: #111111;">니트가디건</span>
+      </a>
+    </div>
+    <ul class="spec">
+      <li class="xans-record-">상품설명1</li>
+      <li class="xans-record-">상품설명2</li>
+      <li class="xans-record-">상품설명3</li>
+    </ul>
+    <div class="icon">
+      <img src="" alt="">
+    </div>
+  </div>
+</div>
+*/
+
+.ec-base-product .prdList .description{
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* 요구조건 - 상품명은 iline style을 무시하고 반드시 빨강 15px(관리자화면 설정 무시) */
+/*
++ (인접형제 구분자)
+
+.s1 + .s2 --> .s1의 바로 다음(인접한) 형제 .s2
+<span class="s2"></span>
+<span class="s1"></span>
+<span class="s2"></span>  <-- 선택
+<span class="s2"></span>
+  */
+.ec-base-product .prdList .description .name a{
+  text-decoration: none;
+}
+
+/* inline style을 무시하는 방법 */
+.ec-base-product .prdList .description .name .title+span{
+  color: red !important;
+  font-size: 15px !important;
+}
+.ec-base-product .prdList .description ul.spec{}
+.ec-base-product .prdList .description ul.spec li{}
+.ec-base-product .prdList .description .icon{}
+.ec-base-product .prdList .description .icon img{}
