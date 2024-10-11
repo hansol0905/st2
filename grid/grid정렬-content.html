@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid정렬-content</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .wrap{
+      margin: 20px;
+    }
+    .container{
+      background-color: #ff6;
+      border: 10px solid #ccc;
+    }
+    .item{
+      background-color: dodgerblue;
+      text-align: center;
+    }
+    /* grid */
+    .grid-container{
+      display: grid; /*1*/
+      /*3줄 = repeat(3, auto) = auto auto auto*/
+      grid-template-rows: repeat(3, minmax(70px, auto)) ; /*2*/
+      /*4칸 = repeat(4, 1fr) = 1fr 1fr 1fr 1fr */
+      grid-template-columns: repeat(4, 1fr); /*2*/
+      grid-auto-rows: minmax(70px, auto); /*3*/
+      grid-auto-flow: row; /*5*/
+      gap: 4px; /*6*/
+    }
+    .item:nth-child(1),
+    .item:nth-child(5)
+    {
+      /* 원래 자기자리 기본값은 생략가능함 */
+      /* grid-row-start: 1; */
+      /* grid-row-end: 2; */
+      /* grid-column-start: 1; */
+      /* grid-column-end: 3; */
+      /* grid-column-end: span 2; */
+
+      /* 단축표기법 */
+      /* grid-column: 1/3; */
+      /* grid-column: 1/span 2; */
+      grid-column: span 2;
+      /* grid-row: 1/2; */
+      /* 순서 grid: r-s/c-s/r-e/c-e; */
+      /* grid: 1/1/2/3; */
+      /* grid: 1/1/2/span 2; */
+      /* grid: span 2; */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container grid-container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+  </div>
+  <div>
+    1~6번 : grid-container<br>
+    1. 그리드 선언<br>
+    2. 행 수/크기, 열 수/크기<br>
+    3. 만약 내가 지정한 행 or 열 수를 초과한게 있다면<br>
+    추가된 행 또는 열의 크기는 어떻게 할건지 지정 =grid auto<br>
+    4. 그리드 영역의 이름 템플릿 만들지 결정<br>
+    5. 그리드 아이템이 들어가는 순서 흐름 결정 =grid auto flow<br>
+    6. 그리드 셀과 셀 사이에 여백을 줄건지 결정<br>
+
+    7번: item
+    7. 아이템 배치<br>
+
+    8번: 
+    8. 정렬<br>
+    <br>
+    8-1. 그리드 컨테이너 내의 아이템의 수직/수평 정렬<br>
+    8-2. 그리드 영역 내의 아이템이 수직/수평 정렬을 어떻게 할건지<br>
+  </div>
+</body>
+</html>
