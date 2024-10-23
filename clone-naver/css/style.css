@@ -24,6 +24,10 @@
 /****************
 *.cont__summary *
 *****************/
+/* 10.23 추가 */
+.navercorp.main .cont-summary {
+  padding: 150px 60px 80px;
+}
 .navercorp.main .cont-summary .cont__list{
    display: grid;
    gap:20px;
@@ -557,9 +561,6 @@ color:var(--default);
 .navercorp.main .cont-shortcut .cont__item:nth-child(1) .cont__link{
   padding-top: 0;
 }
-.navercorp.main .cont-shortcut .cont__item:nth-child(1) .cont__link{
-  padding-top: 0;
-}
 .navercorp.main .cont-shortcut .cont__item .title{
   position: relative;
   font-size: 32px;
@@ -569,47 +570,52 @@ color:var(--default);
   transition: color 0.3s;
 }
 .navercorp.main .cont-shortcut .cont__item:hover .title{
-  color: #ff5f00;
+  color:#ff5f00;
 }
-.navercorp.main .cont-shortcut .cont__item .ico-link{
-}
+.navercorp.main .cont-shortcut .cont__item .ico-link{ }
 .navercorp.main .cont-shortcut .cont__item .ico-link:after{
   content: "";
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 30px; height: 30px;
   border-radius: 50%;
   background: var(--color-sub02) url(../img/common/ic-quicklink.png) no-repeat center;
   background-size: contain;
-  transition: background 0.3s;
+  transition:  background 0.3s;
 }
 .navercorp.main .cont-shortcut .cont__item .ico-link.outlink:after{
   transform: rotate(-45deg);
 }
 .navercorp.main .cont-shortcut .cont__item .thumb-box{
-  visibility: hidden;
-  position: absolute;
-  top: 50%; /*가운데부터 시작이라 아래로 치우쳐져있음*/
-  left: 50%; /*가운데부터 시작이라 오른쪽은 치우쳐져있음*/
-  transform: translate(-50%, -50%); /*이미지를 부모요소의 가운데*/
-  z-index: 1;
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
+    /* visibility: hidden; /*10.23 삭제*/
+    /* .thumb-box 크기 밖에 있는 표시x */
+    overflow: hidden;/*10.23 수정*/
+    position: absolute;
+    top:50%;/*가운데부터 시작이라 아래로 치우쳐져있어요*/
+    left:50%; /*가운데부터 시작이라 오른쪽은 치우쳐져있어요*/
+    transform: translate(-50%, -50%);/*이미지를 부모요소의 가운데*/
+    z-index: 1;
+    width: 300px; height: 300px;
+    opacity: 0;
+    transition:opacity linear 0.1s;
+    pointer-events: none;
 }
 .navercorp.main .cont-shortcut .cont__item:hover .thumb-box{
-  visibility: visible;
-  opacity: 1;
-  animation: thumbBoxEffect 0.3s ease-in-out forwards;
+  /* visibility: visible; /*10.23 삭제*/
+   opacity: 1;
+   animation: thumbBoxEffect 0.3s ease-in-out forwards;
 }
 .navercorp.main .cont-shortcut .cont__item .thumb-box img{
-  transform: translate(100%, 0, 0);
+  transform: translate(100%, 0,0);
+  /* .thumb-box 밖으로 이미지 밀어내기 위해서 */
 }
 .navercorp.main .cont-shortcut .cont__item:hover .thumb-box img{
   animation: thumbnailEffect 0.3s ease-in-out forwards;
 }
+.navercorp.main .cont-shortcut .cont__item:hover .ico-link:after{
+  background-image: url(../img/common/ic-quicklink-black.png);
+  background-color: #ff5f00;
+}
+
 
 @media (max-width:1919px){
   .navercorp.main .main-content__inner{
@@ -894,6 +900,9 @@ color:var(--default);
 .navercorp.main .cont-shortcut .cont__link{
   padding: 22px 0 25px;
 }
+.navercorp.main .cont-shortcut .cont__item .thumb-box{
+  display: none;
+}
 
 }
 /*@media (max-width:1023px)*/
@@ -1004,11 +1013,13 @@ color:var(--default);
   100%{opacity: 1;}
 }
 
-@keyframes thumbBoxEffect{
-  0%{transform: translate(-150%, 50%);}
-  100%{transform: translate(-50%, -50%);}
+@keyframes thumbBoxEffect {
+   0%{ transform:translate(-150%, -50%)}
+   100%{transform: translate(-50%, -50%);}
 }
+
 @keyframes thumbnailEffect{
-  0%{transform: translate(100%, 0);}
-  100%{transform: translate(0, 0);}
+   0%{transform: translate(100%,0);}
+   100%{transform: translate(0,0);}
+    /* .thumb-box 안으로 이미지 표시 */
 }
