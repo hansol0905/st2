@@ -14,10 +14,12 @@
     /* 여기부터 단배너 css */
     .mybanner{
       --banner-gap:20px;
+      --banner-m-h-gap:10px; /*모바일 수평 갭*/
+      --banner-m-v-gap:10px; /*모바일 수직 갭*/
       --banner-top-margin:50px;
       --banner-bottom-margin:50px;
-      --banner-top-padding:10px;
-      --banner-bottom-padding:10px;
+      --banner-top-padding:30px;
+      --banner-bottom-padding:30px;
       --banner-max-width:1440px;
       --col1:100%;
       --col2:50%;
@@ -25,6 +27,7 @@
       --col4:25%;
       --col5:20%;
     }
+
     .mybanner{
       margin-top: var(--banner-top-margin);
       margin-bottom: var(--banner-bottom-margin);
@@ -33,7 +36,7 @@
     .mybanner__inner{
       max-width: var(--banner-max-width);
       margin: 0 auto;
-      background-color: #f6f;
+      /* background-color: #f6f; */
       padding-top: var(--banner-top-padding);
       padding-bottom: var(--banner-bottom-padding);
     }
@@ -43,6 +46,7 @@
       box-sizing: border-box;
     }
     .mybanner__item{
+      flex: 1;
       box-sizing: border-box;
       background-color: #66f;
     }
@@ -52,19 +56,49 @@
     .mybanner__list.grid4 .mybanner__item{width: var(--col4);}
     .mybanner__list.grid5 .mybanner__item{width: var(--col5);}
     .mybanner__link{display: block;}
-    .mybanner .thumb-box img{width: 100%;}
+    .mybanner .thumb-box picture,
+    .mybanner .thumb-box picture source,
+    .mybanner .thumb-box picture img{
+      display: block;
+      width: 100%;
+    }
     .mybanner .text-box .text-title{}
     .mybanner .text-box .text-desc{}
+
+    @media (max-width: 767px){
+      .mybanner__list{
+        gap: var(--banner-m-h-gap) var(--banner-m-v-gap);
+        flex-wrap: wrap;
+      }
+      .mybanner__item{
+        flex: 1 0 auto;
+      }
+      .mybanner .mybanner__item.m-col1{width: calc(var(--col1) - var(--banner-m-v-gap));}
+      .mybanner .mybanner__item.m-col2{width: calc(var(--col2) - var(--banner-m-v-gap));}
+      .mybanner .mybanner__item.m-col3{width: calc(var(--col3) - var(--banner-m-v-gap));}
+      .mybanner .mybanner__item.m-col4{width: calc(var(--col4) - var(--banner-m-v-gap));}
+    }
+    /* .mybanner 단배너 스타일 끝 */
   </style>
 </head>
 <body>
+  <!-- mybanner 시작 -->
   <div class="mybanner">
     <div class="mybanner__inner">
-      <ul class="mybanner__list grid2">
-        <li class="mybanner__item">
+      <ul class="mybanner__list grid3">
+        <!-- grid4 -> li*4 -->
+        <!-- grid3 -> li*3 -->
+        <!-- grid2 -> li*2 -->
+        <!-- 1번 li -->
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
+              <picture>
+                <source 
+                   srcset="/mytest/img/img_768x768.jpg" 
+                   media="(max-width: 767px)">
+                <img src="/mytest/img/img_1920x810.jpg" alt="">
+              </picture>
             </div>
             <div class="text-box">
               <p class="title">배너제목</p>
@@ -72,10 +106,33 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
+        <!-- 2번 li -->
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
+              <picture>
+                <source 
+                   srcset="/mytest/img/img_768x768.jpg" 
+                   media="(max-width: 767px)">
+                <img src="/mytest/img/img_1920x810.jpg" alt="">
+              </picture>
+            </div>
+            <div class="text-box">
+              <p class="title">배너제목</p>
+              <p class="desc">배너 설명 배너 설명</p>
+            </div>
+          </a>
+        </li>
+        <!-- 3번 li -->
+        <li class="mybanner__item m-col2">
+          <a href="" class="mybanner__link">
+            <div class="thumb-box">
+              <picture>
+                <source 
+                   srcset="/mytest/img/img_1920x810.jpg"
+                   media="(max-width: 767px)">
+                <img src="/mytest/img/img_1920x810.jpg" alt="">
+              </picture>
             </div>
             <div class="text-box">
               <p class="title">배너제목</p>
@@ -86,5 +143,6 @@
       </ul>
     </div>
   </div>
+  <!-- //.mybanner -->
 </body>
 </html>
