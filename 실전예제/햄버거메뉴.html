@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>햄버거 메뉴</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    /* 햄버거메뉴 */
+    body{margin: 50px;}
+    .btn_megamenu{
+      background-color: #ccc;
+      height: 60px; /*선 위/아래 를 조절하고 싶으면 height 조절*/
+      width: 24px;
+      display: flex; /*정렬이 편해서*/
+      justify-content: center;
+    }
+    .btn_megamenu a{
+      /* display: block; */
+      display: flex;
+      /* background-color: #3cc; */
+      height: 100%;
+      align-items: center;
+    }
+    .btn_megamenu .icon.icoNav{
+      display: block;
+      width: 20px;
+      height: 2px;
+      columns: #000;
+      background: currentColor; /*글자색으로 지정된 색을 사용*/
+      box-shadow: 0 14px 0; /*그림자 마지막 선*/
+      position: relative; /*.icon.icoNav::before 의 기준요소*/
+      margin-top: -14px;
+    }
+    .btn_megamenu .icon.icoNav::before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 7px; /*중간 선 위치*/
+      width: 20px; /*중간 선 너비*/
+      height: 2px; /*중간 선 높이*/
+      background-color: currentColor;
+    }
+  </style>
+</head>
+<body>
+  <div class="btn_megamenu">
+    <a href="" class="eNavFold">
+      <i class="icon icoNav"></i>
+    </a>
+  </div>
+</body>
+</html>
