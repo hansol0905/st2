@@ -203,3 +203,97 @@
 
 #footer .inner .bt_wrap{  margin-bottom:20px;}
 #footer .inner .bt_wrap2{padding-top:0}
+
+/* 폴더스타일  2depth 브라우저 전체너비 */
+#header .inner .top_nav_box .top_category{
+  --main_top_banner-height:64px;
+  --header-height:220px;
+  --sub_cate01-padding-left-right:25%; /*%단위로 넣는게 좋음*/
+  --sub_cate01-padding-bottom:50px;
+  --sub_cate01-title-position-gap:10px;
+  --sub_cate01-title-right-gap:30px;
+}
+
+
+/* 폴더스타일 2depth 브라우저 전체너비 */
+#header .inner .top_nav_box .top_category li.on .sub_cate01, 
+#header .inner .top_nav_box .top_category .sub-category {
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  margin: 0;
+  /* width: auto; */
+  width: 100%;
+  min-width: 120px;
+  padding: 
+    calc(var(--main_top_banner-height) + var(--header-height)) 
+    var(--sub_cate01-padding-left-right) 
+    var(--sub_cate01-padding-bottom); 
+    /* 가운데 위치하기 위해서는 20%를 조절하세요 */
+  background-color: #ff6;
+  border-bottom: 1px solid #e8e8e8;
+  box-sizing: border-box;
+}
+#header .inner .top_nav_box .top_category .sub_cate01 li:hover > a, #header .inner .top_nav_box .top_category .sub-category li:hover > a {
+  background-color: transparent;
+  color: #000;
+}
+
+#header .inner .toparea{
+  z-index: 50;
+}
+#header .inner .top_nav_box .top_logo{
+  z-index: 50;
+}
+#header .inner .top_nav_box .top_mypage{
+  z-index: 50;
+}
+#header .inner .top_nav_box .top_category > ul > li > a{
+  z-index: 50;
+}
+#header .inner .top_nav_box .top_category>ul>li .sub_cate01::before, 
+#header .inner .top_nav_box .top_category>ul>li .sub-category::before {
+  display: block;
+  position: absolute;
+  top: 
+    calc(
+      var(--main_top_banner-height) 
+      + var(--header-height) 
+      + var(--sub_cate01-title-position-gap)
+    ); 
+    /* main_top_banner + header + 여유공간여백*/
+  left: var(--sub_cate01-padding-left-right);
+  transform: 
+    translateX(
+      calc(-100% - var(--sub_cate01-title-right-gap)) 
+    );
+  font-size: 2rem;
+  
+} 
+#header .inner .top_nav_box .top_category>ul>li .sub_cate01::after, 
+#header .inner .top_nav_box .top_category>ul>li .sub-category::after {
+  content: "";
+  position: absolute;
+  top: 
+    calc(
+      var(--main_top_banner-height) 
+      + var(--header-height)
+    );
+  left: var(--sub_cate01-padding-left-right);
+  bottom: var(--sub_cate01-padding-bottom);
+  width: 2px;
+  border-right: 1px solid #000;
+}
+
+#header .inner .top_nav_box .top_category>ul>li:nth-child(1) .sub_cate01::before, 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(1) .sub-category::before {
+  content: "BEST 100";
+
+} 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(3) .sub_cate01::before, 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(3) .sub-category::before {
+  content: "Tops";
+} 
+/* //폴더스타일 2depth 브라우저 전체너비 */
