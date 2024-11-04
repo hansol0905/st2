@@ -1,0 +1,111 @@
+.btn_megamenu{
+  /* background-color: #ccc; */
+  display: flex; /*정렬이 편해서*/
+  justify-content: center;
+  height: 80px; /*선 위/아래 를 조절하고 싶으면 height 조절, 다른 flex item 과 동일하게 크기조절 */
+  width: 40px;
+  margin-right: 10px; /*gnb 간격을 벌리기 위해*/
+}
+.btn_megamenu a{
+  /* display: block; */
+  display: flex;
+  /* background-color: #3cc; */
+  height: 100%;
+  align-items: center;
+}
+.btn_megamenu .icon.icoNav{
+  display: block;
+  width: 20px;
+  height: 2px;
+  columns: #000;
+  background: currentColor; /*글자색으로 지정된 색을 사용*/
+  box-shadow: 0 14px 0; /*그림자 마지막 선*/
+  position: relative; /*.icon.icoNav::before 의 기준요소*/
+  margin-top: -14px;
+}
+.btn_megamenu .icon.icoNav::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 7px; /*중간 선 위치*/
+  width: 20px; /*중간 선 너비*/
+  height: 2px; /*중간 선 높이*/
+  background-color: currentColor;
+}
+
+/* btn_mega_close 버튼 */
+.btn_megamenu.btn_mega_close a{
+  transform: rotate(45deg);
+  margin: 0 auto;
+}
+
+.btn_megamenu.btn_mega_close a .icon.icoNav{
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.btn_megamenu.btn_mega_close a .icon.icoNav::before{
+  transform: rotate(90deg);
+}
+.btn_megamenu.btn_mega_close a .icon.icoNav::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 20px; /*before랑 동일*/
+  height: 2px; /*before랑 동일*/
+  background-color: currentColor; /*상위 부모 컬러랑 동일하게*/
+}
+
+.dimmed{
+  /* display: none; */
+  z-index: 990;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* .btn_megamunu 를 클릭한 상태 */
+/* body테스트용 */
+body{
+  /* background-color: #f00; */
+  /* min-height: 2000px; */
+}
+.mega-opened{
+  overflow: hidden; /*스크롤없애기*/
+  height: 100%;
+}
+.mega-opened #layoutDimmend{
+  display: block;
+}
+
+/* .mega_box */
+.mega_box{
+  display: none;
+}
+.mega-opened .mega_box{
+  display: block;
+}
+.mega_box .mega_inner{
+  display: flex;
+  width: 92%;
+  min-width: 1680px;
+  padding: 50px 0;
+  margin: 0 auto;
+  background-color: #ff6;
+}
+
+/* .mega_box .mega_inner 의 자식들 스타일 넣기 */
+
+@media (max-width: 1024px){
+  .mega_box,
+  .btn_megamenu{
+    display: none;
+  }
+}
+/* 메가메뉴 스타일 끝 */

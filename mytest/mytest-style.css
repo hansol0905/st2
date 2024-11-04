@@ -218,7 +218,7 @@
 #header .inner .top_nav_box .top_category .sub-category {
   /* position: absolute; */
   position: fixed;
-  top: 0;
+  top: 0;  
   left: 0;
   z-index: 10;
   margin: 0;
@@ -230,7 +230,7 @@
     var(--sub_cate01-padding-left-right) 
     var(--sub_cate01-padding-bottom); 
     /* 가운데 위치하기 위해서는 20%를 조절하세요 */
-  background-color: #ff6;
+  /* background-color: #ff6; */
   border-bottom: 1px solid #e8e8e8;
   box-sizing: border-box;
 }
@@ -290,55 +290,21 @@
   border-right: 1px solid #000;
 }
 
-#header .inner .top_nav_box .top_category>ul>li:nth-child(1) .sub_cate01::before, 
-#header .inner .top_nav_box .top_category>ul>li:nth-child(1) .sub-category::before {
-  content: "BEST 100";
-
-} 
 #header .inner .top_nav_box .top_category>ul>li:nth-child(3) .sub_cate01::before, 
 #header .inner .top_nav_box .top_category>ul>li:nth-child(3) .sub-category::before {
-  content: "Tops";
+  content: "유형별";
+
+} 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(4) .sub_cate01::before, 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(4) .sub-category::before {
+  content: "기능별";
+} 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(5) .sub_cate01::before, 
+#header .inner .top_nav_box .top_category>ul>li:nth-child(5) .sub-category::before {
+  content: "성분별";
 } 
 
 @media (max-width: ){
 
 }
 /* //폴더스타일 2depth 브라우저 전체너비 끝*/
-
-/* 헤더검색창 시작(우든) */
-#header .my_top_search{
-  width: 190px;
-  height: 40px;
-  border-bottom:1px solid #ccc;
-  align-self: center;
- }
- #header .my_top_search form{
-   display: block;
-   height: 100%;
- }
- 
- #header .my_top_search .xans-layout-searchheader{
-   display: block;
-   position: static;
-   height: 100%;
-   width: 100%;
- }
- #header .my_top_search .xans-layout-searchheader fieldset{
-   position: static;
-   display: inline-block;
-   width: 100%; height: 100%;
-   transform: translate(0,0);
-   border: 0;
- 
- }
- #header .my_top_search .xans-layout-searchheader #keyword{
-   /* border: 1px solid #ccc; */
-   border: 0;
-   outline:none;
- }
- #header .my_top_search .xans-layout-searchheader input[type="image"]{
-   width:22px; height: 22px;
-   position: absolute; right: 0; top:50%;
-   transform: translateY(-50%);
- }
- /*//헤더검색창 끝*/
