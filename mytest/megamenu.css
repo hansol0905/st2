@@ -125,6 +125,7 @@ body{
   font-weight: 600;
   color: #888;
   border-bottom: 1px solid #ddd;
+  width: 115px;
   display: block;
   padding-bottom: 17px;
   transition: all 0.4s;
@@ -157,8 +158,8 @@ body{
 /* community , account */
 #header .mega_box .mega_inner .xans-layout > li > a {
   /* background-color: blue; */
-  margin-top: 2px;
-  font-weight: 510;
+  margin-top: 1px;
+  font-weight: 700;
 }
 #header .mega_box .mega_inner .xans-layout li {
   /* background-color: #3f3; */
@@ -174,7 +175,7 @@ body{
 
 /* mega_companyinfo */
 #header .mega_companyinfo {
-  margin: 5px 0px 0px 20px;
+  margin: 5px 0px 0px 15px;
 }
 #header .mega_companyinfo .cs-center{
   /* background-color: aquamarine; */
