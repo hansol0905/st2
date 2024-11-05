@@ -90,6 +90,7 @@ body{
 }
 .mega-opened .mega_box{
   display: block;
+  height: calc(100vh - 64px - 141px);
 }
 .mega_box .mega_inner{
   display: flex;
@@ -97,10 +98,102 @@ body{
   min-width: 1680px;
   padding: 50px 0;
   margin: 0 auto;
-  background-color: #ff6;
+  background-color: #f5f5f5;
+
+  /* 스크롤되도록 추가함 */
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
 }
 
-/* .mega_box .mega_inner 의 자식들 스타일 넣기 */
+/***** .mega_box .mega_inner 의 자식들 스타일 넣기 */
+#header .mega_box .mega_inner .snb {
+  display: flex;
+  width: 100%;
+}
+#hd_aside .right_box .snb .dep2 > li a:hover {
+    color: #333;
+}
+#header .mega_box .mega_inner .snb > li {
+  /* background-color: #f66; */
+  width: 100%;
+  margin-right: 40px;
+}
+#header .mega_box .mega_inner .snb > li > a {
+  /* background-color: #66f; */
+  font-size: 20px;
+  font-weight: 600;
+  color: #888;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  padding-bottom: 17px;
+  transition: all 0.4s;
+  text-align: center;
+}
+
+#header .mega_box .mega_inner .snb .sub_cate01 > li a:hover {
+  color: green;
+}
+
+#header .mega_box .mega_inner .snb .sub_cate01 {
+  /* background-color: aqua; */
+  padding: 22px 0;
+  text-align: center;
+}
+
+#header .mega_box .mega_inner .snb .sub_cate01 > li a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  transition: all 0.4s;
+  /* background-color: red; */
+}
+#header .mega_box .mega_inner .snb .sub_cate01 > li {
+  /* background-color: pink; */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* community , account */
+#header .mega_box .mega_inner .xans-layout > li > a {
+  /* background-color: blue; */
+  margin-top: 2px;
+  font-weight: 510;
+}
+#header .mega_box .mega_inner .xans-layout li {
+  /* background-color: #3f3; */
+}
+
+#header .mega_inner {
+  /* background-color: yellow; */
+  padding: 55px 0 70px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* mega_companyinfo */
+#header .mega_companyinfo {
+  margin: 5px 0px 0px 20px;
+}
+#header .mega_companyinfo .cs-center{
+  /* background-color: aquamarine; */
+  margin-bottom: 30px;
+}
+
+#header .mega_companyinfo .info-title{
+  /* background-color: yellow; */
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #888;
+}
+#header .mega_companyinfo .info-content>p{
+  /* background-color: skyblue; */
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #555;
+}
 
 @media (max-width: 1024px){
   .mega_box,
@@ -108,4 +201,4 @@ body{
     display: none;
   }
 }
-/* 메가메뉴 스타일 끝 */
+/****** //메가메뉴 스타일 끝 */
