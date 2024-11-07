@@ -74,10 +74,10 @@
 <body>
   <!-- myslide 시작 -->
   <div class="myslide">
-    <div class="myslide__inner">
-      <ul class="myslide__list">
+    <div class="myslide__inner swiper">
+      <ul class="myslide__list swiper-wrapper">
          <!-- 1번 li -->
-        <li class="myslide__item">
+        <li class="myslide__item swiper-slide">
           <a href="" class="myslide__link">
             <div class="thumb-box">
               <picture>
@@ -95,7 +95,7 @@
           </a>
         </li>
         <!-- 2번째 li -->
-        <li class="myslide__item">
+        <li class="myslide__item swiper-slide">
           <a href="" class="myslide__link">
             <div class="thumb-box">
               <picture>
@@ -113,7 +113,7 @@
           </a>
         </li>
         <!-- 3번째 li -->
-        <li class="myslide__item">
+        <li class="myslide__item swiper-slide">
           <a href="" class="myslide__link">
             <div class="thumb-box">
               <picture>
@@ -131,7 +131,7 @@
           </a>
         </li>
         <!-- 4번째 li -->
-        <li class="myslide__item">
+        <li class="myslide__item swiper-slide">
           <a href="" class="myslide__link">
             <div class="thumb-box">
               <picture>
@@ -150,6 +150,15 @@
         </li>
 
       </ul>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
     </div>
   </div>
   <!-- //myslide -->
