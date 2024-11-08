@@ -93,21 +93,19 @@
  }
 #footer .inner .bt_top_right .bt_sns a svg {height:34px;}
 #footer .inner .bt_top_right .bt_sns a svg path {fill:#ababab;-webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s;  transition: all 0.3s;}
-#footer .inner .bt_top_right .bt_sns a:hover svg path {fill:#111;}
-
-
+#footer .inner .bt_top_right .bt_sns a:hover svg path {fill:#96be8c;}
  /* footer bt-sns 끝 */
 
  /* 루미너스 footer 디자인 수정 */
-
- /* //루미너스 footer 디자인 수정 */
 #footer{
-  /* background-color: #3a3a3a; */
+  width: 100%;
+  background-color: #243119;
 }
 #footer .inner{
-  color:#cfcfcf;
+  color:#fff;
 }
-#footer .bt_info .title{
+#footer .bt_info .bt_title{
+  background-color: #fff;
   display: none;
 }
 /* 글자색상변경 */
@@ -128,10 +126,10 @@
 }
 #footer .bt_info .bt_info_list [data-ez-item="company_name"]{ order:1;}
 #footer .bt_info .bt_info_list [data-ez-item="president_name"]{ order:2;}
-#footer .bt_info .bt_info_list [data-ez-item="address"]{ order:5;}
-#footer .bt_info .bt_info_list [data-ez-item="phone"]{ order:6;}
 #footer .bt_info .bt_info_list [data-ez-item="company_regno"]{ order:3;}
 #footer .bt_info .bt_info_list [data-ez-item="network_regno"]{ order:4;}
+#footer .bt_info .bt_info_list [data-ez-item="address"]{ order:5;}
+#footer .bt_info .bt_info_list [data-ez-item="phone"]{ order:6;}
 #footer .bt_info .bt_info_list [data-ez-item="cpo_name"]{ order:7;}
 
 #footer .bt_info .bt_info_list [data-ez-item="company_name"] span:first-child{
@@ -143,11 +141,13 @@
 #footer .inner .bt_bank{
   display: none;
 }
-
+#footer .inner .bt_info .title {
+  display: none;
+}
 #footer .inner .bt_wrap .bt_boardinfo{
   margin-left:auto;
   width: 180px;
-  background: blue;
+  /* background: blue; */
 }
 #footer .inner .bt_wrap .bt_boardinfo .title{
   font-size: 20px;
@@ -176,13 +176,13 @@
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  background: #000;
+  /* background: #000; */
 }
 #footer .inner .bt_cscenter .bt_txt02{
   font-size: 14px;
   letter-spacing: 0.5px;
   margin-bottom: 0;
-  background: purple;
+  /* background: purple; */
 }
 
 /* 클래스명 bt_ 시작하는 요소 */
@@ -195,7 +195,7 @@
 }
 #footer .inner .bt_wrap2{
   border-top: 0 none;
-  background: yellow;
+  /* background: yellow; */
 }
 #footer .inner .bt_wrap2 .bt_sns .title{  display: none;}
 #footer .inner .bt_wrap2 .bt_sns a{padding:0}
@@ -203,6 +203,13 @@
 
 #footer .inner .bt_wrap{  margin-bottom:20px;}
 #footer .inner .bt_wrap2{padding-top:0}
+
+
+#footer .inner .bt_wrap2 .bt_sns a svg {
+  height: 30px;
+}
+/* //루미너스 footer 디자인 수정 */
+
 
 /* 폴더스타일  2depth 브라우저 전체너비 */
 #header .inner .top_nav_box .top_category{
@@ -308,3 +315,110 @@
 
 }
 /* //폴더스타일 2depth 브라우저 전체너비 끝*/
+
+/*여기서 부터 단 myslide 배너 css */
+.myslide {
+  --slide-top-margin: 50px;
+  --slide-bottom-margin: 50px;
+  --slide-max-width: 1680px;
+}
+
+.myslide {
+  margin-top: var(--slide-top-margin);
+  margin-bottom: var(--slide-bottom-margin);
+}
+
+.myslide__inner {
+  max-width: var(--slide-max-width);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.myslide__list {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.myslide__item {
+  box-sizing: border-box;
+}
+
+.myslide__link {
+  display: block;
+}
+
+.myslide .thumb-box picture,
+.myslide .thumb-box picture source,
+.myslide .thumb-box picture img {
+  display: block;
+  width: 100%;
+}
+
+.myslide .text-box {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.myslide .text-box .text-title {}
+
+.myslide .text-box .text-desc {}
+
+
+
+/* swiper ui 변경 */
+.myslide .swiper-pagination {
+  transform: translateX(-50%);
+  bottom: 50px;
+  left: 50%;
+}
+
+.myslide .swiper-pagination-bullet {
+  margin: 0 3px;
+}
+
+.myslide .swiper-pagination-bullet-active {
+  background: #000;
+}
+
+.myslide .swiper-button-next{
+  /* background-image: url("화살이미지를 URL"); */
+  background-image: url(/mytest/img2/free-icon-arrow-right-6423875.png) center no-repeat;
+  /* background-color: #000; */
+}
+
+.myslide .swiper-button-prev {
+  /* background-image: url("화살이미지를 URL"); */
+  background-image: url(/mytest/img2/free-icon-arrow-left-6423874.png) center no-repeat;
+  /* background-color: #000; */
+}
+
+.myslide .swiper-scrollbar {
+  height: 4px;
+  bottom: 28px;
+  z-index: 990;
+}
+
+@media (max-width:720px) {
+  .myslide__inner {
+    /* width:92%; */
+    margin: 0 50px;
+    min-width: 340px;
+    overflow: unset;
+  }
+
+  .myslide .swiper-pagination {
+    bottom: 30px;
+  }
+
+  .myslide .swiper-button-next,
+  .myslide .swiper-button-prev,
+  .myslide .swiper-container-rtl .swiper-button-next,
+  .myslide .swiper-container-rtl .swiper-button-prev {
+    display: none;
+  }
+
+}
+/*.myslide 단배너 스타일끝 */
